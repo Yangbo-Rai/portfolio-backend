@@ -5,6 +5,14 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/')
+def get_info():
+    return jsonify({
+        "name": "Yangbo Rai",
+        "title": "Full Stack Developer",
+        "specialization": "Front-end Technology"
+    })
+
 @app.route('/api/info')
 def get_info():
     return jsonify({
